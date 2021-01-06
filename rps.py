@@ -91,11 +91,11 @@ class Game:
             # self.p2.learn(move2, move1)
             self.turn += 1
         if beats(move1, move2):
-            self.p1score += 1
-            print("**PLAYER 1 WINS**")
+            self.p1score += 1     
+            print("**PLAYER 1 WINS THE ROUND**")
         elif beats(move2, move1):
             self.p2score += 1
-            print("**PLAYER 2 WINS**")
+            print("**PLAYER 2 WINS THE ROUND**")
         else:
             print("**TIE**")
         print(f"The score is Player 1: {self.p1score}, Player 2: {self.p2score}.\n")
@@ -103,9 +103,15 @@ class Game:
 
     def play_game(self):
         print("Let's play Rock, Paper, Scissors!\n")
-        for round in range(3):
+        for round in range(100):
             print(f"Round {round + 1}:")
             self.play_round()
+            if self.p1score > self.p2score + 2:
+                print("**PLAYER 1 WINS THE GAME!**")
+                break
+            if self.p2score > self.p1score + 2:
+                print("**PLAYER 2 WINS THE GAME!**")
+                break
         print("Game over!")
 
 
