@@ -1,5 +1,3 @@
 Udacity Introduction to Programming Nanodegree; Project 2; Rock, Paper, Scissors
 
-This program plays a game of Rock, Paper, Scissors between two Players and reports both Player's scores each round.
-
-This is the first time I am attempting to use GitHub while completing my project file. Let's see how this goes. 
+This program plays a game of Rock, Paper, Scissors between two Players and reports both Player's scores each round. When one Player wins by 3 rounds, that Player wins and the game is over.
