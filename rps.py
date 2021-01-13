@@ -72,7 +72,6 @@ class CyclePlayer(Player):
     def learn(self, my_move, their_move):
         self.my_move = my_move
         self.their_move = their_move
-        
 
 
 def beats(one, two):
@@ -98,7 +97,7 @@ class Game:
         global rnd
         rnd += 1
         if self.p1_returned_move == "quit" or self.p2_returned_move == "quit":
-            return 
+            return
         elif beats(move1, move2):
             self.p1s += 1
             print("**PLAYER 1 WINS THE ROUND**")
@@ -114,9 +113,12 @@ class Game:
         for round in range(100):
             print(f"Round {round + 1}:")
             self.play_round()
-            if self.p1_returned_move == "quit" or self.p2_returned_move == "quit":
+            if self.p1_returned_move == "quit":
                 print("**PLAYER QUITS!**")
-                break            
+                break
+            if self.p2_returned_move == "quit":
+                print("**PLAYER QUITS!**")
+                break
             if self.p1s > self.p2s + 2:
                 print("**PLAYER 1 WINS THE GAME!**")
                 break
